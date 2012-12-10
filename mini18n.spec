@@ -1,11 +1,11 @@
-Name:			mini18n
-Version:		0.1
-Release:		%mkrel 2
-
 %define major		0
 %define lib_name	%mklibname mini18n %{major}
 %define devel_name	%mklibname mini18n -d
 
+
+Name:		mini18n
+Version:	0.1
+Release:	3
 Summary:	A translation library
 #License:	LGPLv2+
 #strange license
@@ -14,8 +14,6 @@ License:	GPLv2+
 Group:		System/Libraries
 URL:		http://yabause.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/yabause/%{name}-%{version}.tar.gz
-
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Mini18n is a small library to translate applications across multiple 
@@ -48,26 +46,23 @@ Library and includes files for developing programs translated with mini18n.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall
 
-%if %mdkversion < 200900
-%post -n %{lib_name} -p /sbin/ldconfig
-%postun -n %{lib_name} -p /sbin/ldconfig
-%endif
-
-%clean
-rm -rf %{buildroot}
-
 %files -n %{lib_name}
-%defattr(-,root,root)
 %doc AUTHORS ChangeLog README example/{main.c,Makefile*}
 %{_libdir}/*.so.*
 
 %files -n %{devel_name}
-%defattr(-,root,root)
 %{_includedir}/*
 %{_libdir}/*.a
-%{_libdir}/*.la
 %{_libdir}/*.so
 
+
+%changelog
+* Mon Aug 01 2011 Andrey Bondrov <abondrov@mandriva.org> 0.1-2mdv2012.0
++ Revision: 692652
+- imported package mini18n
+
+
+* Sat Jan 17 2009 Guillaume Bedot <littletux@zarb.org> 0.1-1mdv2009.1
+- First package of mini18n for PLF
