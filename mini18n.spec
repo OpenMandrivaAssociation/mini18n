@@ -5,7 +5,7 @@
 
 Name:		mini18n
 Version:	0.1
-Release:	3
+Release:	4
 Summary:	A translation library
 #License:	LGPLv2+
 #strange license
