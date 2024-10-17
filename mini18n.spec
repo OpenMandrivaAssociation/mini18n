@@ -12,7 +12,7 @@ Summary:	A translation library
 #it was already distributed with yabause under GPLv2+
 License:	GPLv2+
 Group:		System/Libraries
-URL:		http://yabause.sourceforge.net/
+URL:		https://yabause.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/yabause/%{name}-%{version}.tar.gz
 
 %description
